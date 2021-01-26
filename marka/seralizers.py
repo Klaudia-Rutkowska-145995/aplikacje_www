@@ -5,7 +5,7 @@ from .models import Brand, Car
 class BrandSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Brand
-        fields = ['name', 'description']
+        fields = ['url', 'pk', 'name', 'description']
 
 
 class CarSerializer(serializers.HyperlinkedModelSerializer):
@@ -13,4 +13,4 @@ class CarSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Car
-        fields = ['name', 'description', 'brand', 'production_year', 'price', 'color']
+        fields = ['url', 'pk', 'name', 'description', 'brand', 'production_year', 'price', 'color']

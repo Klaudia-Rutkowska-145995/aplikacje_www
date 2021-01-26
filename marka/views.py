@@ -6,14 +6,16 @@ from .models import Brand, Car
 from .seralizers import BrandSerializer, CarSerializer
 
 
-def getBrand(request, id):
-    brand = Brand.objects.get(pk=id)
-    return HttpResponse(brand.name)
+class GetBrand(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Brand.objects.all()
+    serializer_class = BrandSerializer
+    name = 'brand-detail'
 
 
-def getCar(request, id):
-    car = Car.objects.get(pk=id)
-    return HttpResponse(car.name)
+class GetCar(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Car.objects.all()
+    serializer_class = CarSerializer
+    name = 'car-detail'
 
 
 class BrandList(generics.ListAPIView):
