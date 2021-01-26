@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='car',
             name='production_year',
-            field=models.DecimalField(decimal_places=0, max_digits=9999),
+            field=models.DecimalField(decimal_places=0, max_digits=65),
         ),
     ]
